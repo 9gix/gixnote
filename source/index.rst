@@ -12,7 +12,7 @@ Table Contents:
    :maxdepth: 2
 
    web/index
-   server/index
+   system/index
 
 Indices and tables
 ==================

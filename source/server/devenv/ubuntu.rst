@@ -1,4 +1,0 @@
-My Ubuntu Development Environment
-=================================
-
-
