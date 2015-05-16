@@ -1,3 +1,5 @@
+.. _ubuntu:
+
 My Ubuntu Development Environment
 =================================
 
@@ -18,7 +20,7 @@ Terminology:
 Note: 
 
 #. Execute with `sudo` command when needed
-#. `Fedora Setup`_
+#. :ref:`fedora`
 
 .. code-block:: bash
 
@@ -119,11 +121,3 @@ Note:
     # http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-service.html
 
     # Bash Alias File: ~/.bash_aliases
-
-Ref:
-
-* `vimrc file`_
-
-.. _Fedora Setup: fedora.html 
-.. _vimrc file: vimrc.html
-

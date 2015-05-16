@@ -1,3 +1,5 @@
+.. _fedora:
+
 Setup Fedora as Development Environment
 #######################################
 
