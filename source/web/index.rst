@@ -5,3 +5,4 @@ Web Development
    :maxdepth: 2
 
    magento/index
+   django/index
