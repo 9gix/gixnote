@@ -6,12 +6,12 @@
 Welcome to gixnote's documentation!
 ===================================
 
-Contents:
+Table Contents:
 
 .. toctree::
    :maxdepth: 2
 
-
+   web/index
 
 Indices and tables
 ==================
