@@ -5,3 +5,4 @@ Magento Note
    :maxdepth: 2
 
    setup
+   extension
