@@ -3,21 +3,26 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to gixnote's documentation!
-===================================
+Welcome to gixnote!
+===================
+
+Greetings!! I am Eugene.
+
+This is my technical handbook. 
+It is a compliation of documents from multiple sources.
+There are bookmarks, documents, blog, guide, Q&A, code, and many more.
+I used it for my own reference.
+If anyone find it useful, you can always refer to the respective original source.
+
+Happy Exploring!!! :)
 
 Table Contents:
 
 .. toctree::
    :maxdepth: 2
 
-   web/index
+   develop/web/index
+   develop/python/index
    system/index
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   net/index
 
