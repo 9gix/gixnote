@@ -54,21 +54,61 @@
             
   <div class="section" id="windows-development-environment">
 <span id="windows"></span><h1>Windows Development Environment<a class="headerlink" href="#windows-development-environment" title="Permalink to this headline">¶</a></h1>
-<ol class="arabic simple">
-<li>Install VMWare Workstation</li>
-<li>Setup Debian as Guest OS in VMWare
-Note: when prompted <em>Debian Software Selection</em>, untick &#8220;Desktop Environment&#8221;.</li>
-<li>Debian: set static IP address</li>
-<li>Debian: install <a class="reference internal" href="general-tools.html#dev-tool"><span>Useful Tools for Web Development</span></a> especially vim, tmux, python.</li>
-<li>Windows: Install <a class="reference external" href="http://conemu.github.io/">ConEmu</a></li>
-<li>Windows: Install <a class="reference external" href="http://www.mingw.org/wiki/msys">MinGW MSYS</a> or <a class="reference external" href="https://msysgit.github.io/">Git Bash</a> (prefered)</li>
-<li>Windows: Generate SSH key pair (public, private)
-<code class="docutils literal"><span class="pre">ssh-keygen</span> <span class="pre">-t</span> <span class="pre">rsa</span></code></li>
-<li>Debian: Add Windows public SSH key into Debian Authorized SSH Key
-File: <code class="docutils literal"><span class="pre">~/.ssh/authorized_keys</span></code></li>
-<li>Windows: Setup <a class="reference external" href="http://conemu.github.io/">ConEmu</a> to use <cite>MinGW MSYS</cite> bash shell</li>
-<li>Windows - Bash Shell: Setup Alias to ssh to Debian
-<code class="docutils literal"><span class="pre">alias</span> <span class="pre">debian=&quot;ssh</span> <span class="pre">&lt;user&gt;&#64;&lt;ip-address&gt;</span> <span class="pre">-t</span> <span class="pre">tmux</span> <span class="pre">a</span></code></li>
+<ol class="arabic">
+<li><p class="first">Install VMWare Workstation</p>
+</li>
+<li><dl class="first docutils">
+<dt>Setup Debian as Guest OS in VMWare</dt>
+<dd><p class="first last">Note: when prompted <em>Debian Software Selection</em>, untick &#8220;Desktop Environment&#8221;.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Debian: set static IP address. For example:</dt>
+<dd><div class="first last highlight-none"><div class="highlight"><pre>iface eth0 inet static
+    address 192.168.123.123
+    gateway 192.168.123.2
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p class="first">Debian: install <a class="reference internal" href="general-tools.html#dev-tool"><span>Useful Tools for Web Development</span></a> especially vim, tmux, python.</p>
+</li>
+<li><p class="first">Windows: Install <a class="reference external" href="http://conemu.github.io/">ConEmu</a></p>
+</li>
+<li><p class="first">Windows: Install <a class="reference external" href="http://www.mingw.org/wiki/msys">MinGW MSYS</a> or <a class="reference external" href="https://msysgit.github.io/">Git Bash</a> (prefered)</p>
+</li>
+<li><dl class="first docutils">
+<dt>Windows: Generate SSH key pair (public, private)</dt>
+<dd><div class="first last highlight-bash"><div class="highlight"><pre>ssh-keygen -t rsa
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Debian: Add Windows public SSH key into Debian Authorized SSH Key</dt>
+<dd><p class="first last"><code class="docutils literal"><span class="pre">#</span> <span class="pre">File:</span> <span class="pre">~/.ssh/authorized_keys</span></code></p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Windows: Setup <a class="reference external" href="http://conemu.github.io/">ConEmu</a> to use <a class="reference external" href="http://www.mingw.org/wiki/msys">MinGW MSYS</a> bash shell</p>
+</li>
+<li><dl class="first docutils">
+<dt>Windows - Bash Shell: Setup Alias to ssh to Debian</dt>
+<dd><div class="first last highlight-bash"><div class="highlight"><pre><span class="c"># ~/.bashrc or ~/.bash_aliases</span>
+<span class="nb">alias </span><span class="nv">devm</span><span class="o">=</span><span class="s2">&quot;ssh &lt;user&gt;@&lt;ip-address&gt; -t tmux a</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p class="first">Windows: close VMWare Workstation window.
+When asked, choose run in background instead.</p>
+</li>
+<li><p class="first">Windows: run <a class="reference external" href="http://conemu.github.io/">ConEmu</a> and use alias <code class="docutils literal"><span class="pre">devm</span></code> to connect to dev environment</p>
+</li>
 </ol>
 </div>
 
