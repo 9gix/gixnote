@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Setup Development Environment &mdash; gixnote 0.0.1 documentation</title>
+    <title>Windows Development Environment &mdash; gixnote 0.0.1 documentation</title>
     
     <link rel="stylesheet" href="../../static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
@@ -24,9 +24,9 @@
     <script type="text/javascript" src="../../static/underscore.js"></script>
     <script type="text/javascript" src="../../static/doctools.js"></script>
     <link rel="top" title="gixnote 0.0.1 documentation" href="../../index.html" />
-    <link rel="up" title="System Administration" href="../index.html" />
-    <link rel="next" title="Useful Tools for Web Development" href="general-tools.html" />
-    <link rel="prev" title="System Administration" href="../index.html" /> 
+    <link rel="up" title="Setup Development Environment" href="index.html" />
+    <link rel="next" title="Computer Network" href="../../net/index.html" />
+    <link rel="prev" title="Setup Fedora as Development Environment" href="fedora.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -36,13 +36,14 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="general-tools.html" title="Useful Tools for Web Development"
+          <a href="../../net/index.html" title="Computer Network"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../index.html" title="System Administration"
+          <a href="fedora.html" title="Setup Fedora as Development Environment"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">gixnote 0.0.1 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">System Administration</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >System Administration</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Setup Development Environment</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -51,16 +52,24 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="setup-development-environment">
-<h1>Setup Development Environment<a class="headerlink" href="#setup-development-environment" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="general-tools.html">Useful Tools for Web Development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ubuntu.html">My Ubuntu Development Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fedora.html">Setup Fedora as Development Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="windows.html">Windows Development Environment</a></li>
-</ul>
-</div>
+  <div class="section" id="windows-development-environment">
+<span id="windows"></span><h1>Windows Development Environment<a class="headerlink" href="#windows-development-environment" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li>Install VMWare Workstation</li>
+<li>Setup Debian as Guest OS in VMWare
+Note: when prompted <em>Debian Software Selection</em>, untick &#8220;Desktop Environment&#8221;.</li>
+<li>Debian: set static IP address</li>
+<li>Debian: install <a class="reference internal" href="general-tools.html#dev-tool"><span>Useful Tools for Web Development</span></a> especially vim, tmux, python.</li>
+<li>Windows: Install <a class="reference external" href="http://conemu.github.io/">ConEmu</a></li>
+<li>Windows: Install <a class="reference external" href="http://www.mingw.org/wiki/msys">MinGW MSYS</a> or <a class="reference external" href="https://msysgit.github.io/">Git Bash</a> (prefered)</li>
+<li>Windows: Generate SSH key pair (public, private)
+<code class="docutils literal"><span class="pre">ssh-keygen</span> <span class="pre">-t</span> <span class="pre">rsa</span></code></li>
+<li>Debian: Add Windows public SSH key into Debian Authorized SSH Key
+File: <code class="docutils literal"><span class="pre">~/.ssh/authorized_keys</span></code></li>
+<li>Windows: Setup <a class="reference external" href="http://conemu.github.io/">ConEmu</a> to use <cite>MinGW MSYS</cite> bash shell</li>
+<li>Windows - Bash Shell: Setup Alias to ssh to Debian
+<code class="docutils literal"><span class="pre">alias</span> <span class="pre">debian=&quot;ssh</span> <span class="pre">&lt;user&gt;&#64;&lt;ip-address&gt;</span> <span class="pre">-t</span> <span class="pre">tmux</span> <span class="pre">a</span></code></li>
+</ol>
 </div>
 
 
@@ -74,11 +83,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../develop/web/index.html">Web Development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../develop/python/index.html">Python Development</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">System Administration</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">Setup Development Environment</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Setup Development Environment</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="general-tools.html">Useful Tools for Web Development</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ubuntu.html">My Ubuntu Development Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="fedora.html">Setup Fedora as Development Environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="windows.html">Windows Development Environment</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Windows Development Environment</a></li>
 </ul>
 </li>
 </ul>
@@ -87,15 +96,15 @@
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../index.html"
-                        title="previous chapter">System Administration</a></p>
+  <p class="topless"><a href="fedora.html"
+                        title="previous chapter">Setup Fedora as Development Environment</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="general-tools.html"
-                        title="next chapter">Useful Tools for Web Development</a></p>
+  <p class="topless"><a href="../../net/index.html"
+                        title="next chapter">Computer Network</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../sources/system/devenv/index.txt"
+      <li><a href="../../sources/system/devenv/windows.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -123,13 +132,14 @@
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="general-tools.html" title="Useful Tools for Web Development"
+          <a href="../../net/index.html" title="Computer Network"
              >next</a> |</li>
         <li class="right" >
-          <a href="../index.html" title="System Administration"
+          <a href="fedora.html" title="Setup Fedora as Development Environment"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">gixnote 0.0.1 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" >System Administration</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >System Administration</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >Setup Development Environment</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
