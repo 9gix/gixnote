@@ -21,6 +21,7 @@ Note:
 
 #. Execute with `sudo` command when needed
 #. :ref:`fedora`
+#. :ref:`dev-tool`
 
 .. code-block:: bash
 

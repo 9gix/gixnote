@@ -2,9 +2,10 @@ Setup Development Environment
 =============================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    general-tools
    ubuntu
    fedora
+   windows
 
