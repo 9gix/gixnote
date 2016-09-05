@@ -1,0 +1,2 @@
+mkdocs>=0.15,<0.16
+mkdocs-material>=0.2,<0.3

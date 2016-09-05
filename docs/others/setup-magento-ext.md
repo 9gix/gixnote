@@ -1,20 +1,17 @@
-Setup Magento Extension
-=======================
+# Setup Magento Extension
 
-#. Disable all cache at ``Admin Panel > System > Cache Management``
+1. Disable all cache at `Admin Panel > System > Cache Management`
 
-#. Enable Error Printing, go to ``<ProjectDir>/errors``.
-   Copy ``local.xml.sample`` to ``local.xml``
+2. Enable Error Printing, go to `<ProjectDir>/errors`.
+   Copy `local.xml.sample` to `local.xml`
 
-#. Decide ``ModuleNamespace`` and ``ModuleName``
+3. Decide `ModuleNamespace` and `ModuleName`
 
-#. Let ``<ModuleDirectory>`` be
-   ``<ProjectDirectory>/app/code/community/<ModuleNamespace>/<ModuleName>/``.
+4. Let `<ModuleDirectory>` be
+   `<ProjectDirectory>/app/code/community/<ModuleNamespace>/<ModuleName>/`.
 
-#. Create `Module Configuration file`_ at  ``<ModuleDirectory>/etc/config.xml``
+5. Create [Module Configuration file][1] at  `<ModuleDirectory>/etc/config.xml`
 
-    .. code-block:: xml
-        :linenos:
 
         <!-- File: app/code/community/MyCompany/MyProduct/etc/config.xml -->
         <?xml version="1.0" encoding="UTF-8"?>
@@ -41,11 +38,9 @@ Setup Magento Extension
         </config>
 
 
-#. Activate Module using Initial configuration file.
-   ``<ProjectDirectory>/app/etc/modules/<ModuleNamespace_ModuleName>.xml``
+6. Activate Module using Initial configuration file.
+   `<ProjectDirectory>/app/etc/modules/<ModuleNamespace_ModuleName>.xml`
 
-    .. code-block:: xml
-        :linenos:
 
         <!-- File: app/etc/modules/MyCompany_MyProduct.xml -->
         <?xml version="1.0" encoding="UTF-8"?>
@@ -59,13 +54,13 @@ Setup Magento Extension
         </config>
 
 
-#. Verify The module is added at ``System >> Configuration >> Advanced >> Advanced``
+7. Verify The module is added at `System >> Configuration >> Advanced >> Advanced`
 
-#. Plan/Design the Extension structure.
+8. Plan/Design the Extension structure.
 
-#. Start writing the code, and always include them 
+9. Start writing the code, and always include them 
    inside the module configuration file.
 
-#. Learn ``modman`` for packaging the extension
+1. Learn `modman` for packaging the extension
 
-.. _`Module Configuration file`: http://www.magentocommerce.com/wiki/5_-_modules_and_development/reference/module_config.xml
+[1]: http://www.magentocommerce.com/wiki/5_-_modules_and_development/reference/module_config.xml

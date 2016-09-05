@@ -1,7 +1,4 @@
-.. _ubuntu:
-
-My Ubuntu Development Environment
-=================================
+# My Ubuntu Development Environment
 
 The following is a personal notes for Setting up ubuntu for my dev machine.
 
@@ -19,12 +16,11 @@ Terminology:
 
 Note: 
 
-#. Execute with `sudo` command when needed
-#. :ref:`fedora`
-#. :ref:`dev-tool`
+1. Execute with `sudo` command when needed
+2. [fedora](fedora.md)
+3. [dev-tool](toolset.md)
 
-.. code-block:: bash
-
+```bash
     # Update apt repository
     apt update
     apt upgrade
@@ -122,3 +118,4 @@ Note:
     # http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-service.html
 
     # Bash Alias File: ~/.bash_aliases
+```

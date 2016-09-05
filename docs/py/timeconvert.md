@@ -3,8 +3,6 @@ Time Conversion
 
 "24hr" -> "12hr" format 
 
-.. code-block:: python
-
     import time
 
     t24 = "23:30"

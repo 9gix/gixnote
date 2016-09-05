@@ -1,7 +1,4 @@
-Singleton Python
-================
-
-.. code-block:: python
+# Singleton Python
 
     # Borg Pattern
     class Earth:
@@ -13,7 +10,6 @@ Singleton Python
     e2 = Earth()
     e1.population = 30000000
     print e2.population
-
 
 
     # or with Singleton decorator (https://www.python.org/dev/peps/pep-0318/)
