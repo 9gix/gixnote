@@ -7,14 +7,14 @@
         
         
         
-        <link rel="shortcut icon" href="./img/favicon.ico">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Eugene's Tech Note</title>
+	<title>Fedora - Eugene's Tech Note</title>
 
-        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="./css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="./css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/highlight.css">
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -25,7 +25,7 @@
         
     </head>
 
-    <body class="homepage">
+    <body>
 
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -43,7 +43,7 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">Eugene's Tech Note</a>
+            <a class="navbar-brand" href="../..">Eugene's Tech Note</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -53,61 +53,61 @@
                 <ul class="nav navbar-nav">
                 
                 
-                    <li class="active">
-                        <a href=".">Home</a>
+                    <li >
+                        <a href="../..">Home</a>
                     </li>
                 
                 
                 
                     <li >
-                        <a href="bookmarks/">Bookmarks</a>
+                        <a href="../../bookmarks/">Bookmarks</a>
                     </li>
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Devenv <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
-<li >
-    <a href="devenv/fedora/">Fedora</a>
+<li class="active">
+    <a href="./">Fedora</a>
 </li>
 
                         
                             
 <li >
-    <a href="devenv/git-alias/">Git alias</a>
+    <a href="../git-alias/">Git alias</a>
 </li>
 
                         
                             
 <li >
-    <a href="devenv/python3-opencv3/">Python3 opencv3</a>
+    <a href="../python3-opencv3/">Python3 opencv3</a>
 </li>
 
                         
                             
 <li >
-    <a href="devenv/ssh-via-https/">Ssh via https</a>
+    <a href="../ssh-via-https/">Ssh via https</a>
 </li>
 
                         
                             
 <li >
-    <a href="devenv/toolset/">Toolset</a>
+    <a href="../toolset/">Toolset</a>
 </li>
 
                         
                             
 <li >
-    <a href="devenv/ubuntu/">Ubuntu</a>
+    <a href="../ubuntu/">Ubuntu</a>
 </li>
 
                         
                             
 <li >
-    <a href="devenv/windows/">Windows</a>
+    <a href="../windows/">Windows</a>
 </li>
 
                         
@@ -122,13 +122,13 @@
                         
                             
 <li >
-    <a href="others/setup-magento-ext/">Setup magento ext</a>
+    <a href="../../others/setup-magento-ext/">Setup magento ext</a>
 </li>
 
                         
                             
 <li >
-    <a href="others/setup-magento/">Setup magento</a>
+    <a href="../../others/setup-magento/">Setup magento</a>
 </li>
 
                         
@@ -143,19 +143,19 @@
                         
                             
 <li >
-    <a href="py/singleton/">Singleton</a>
+    <a href="../../py/singleton/">Singleton</a>
 </li>
 
                         
                             
 <li >
-    <a href="py/textsplitter/">Textsplitter</a>
+    <a href="../../py/textsplitter/">Textsplitter</a>
 </li>
 
                         
                             
 <li >
-    <a href="py/timeconvert/">Timeconvert</a>
+    <a href="../../py/timeconvert/">Timeconvert</a>
 </li>
 
                         
@@ -173,13 +173,13 @@
                     </a>
                 </li>
                 
-                    <li class="disabled">
-                        <a rel="next" >
+                    <li >
+                        <a rel="next" href="../../bookmarks/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="bookmarks/">
+                        <a rel="prev" href="../git-alias/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -195,16 +195,131 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#eugenes-note">Eugene's Note!</a></li>
+        <li class="main active"><a href="#setup-fedora-as-development-environment">Setup Fedora as Development Environment</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="eugenes-note">Eugene's Note!</h1>
-<p>Greetings!!</p>
-<p>Happy Exploring!!! :)</p></div>
+<h1 id="setup-fedora-as-development-environment">Setup Fedora as Development Environment</h1>
+<pre><code class="bash">    # Kernel headers, compiler, etc
+    yum install kernel-headers kernel-devel gcc
+
+    # Yakuake is very useful if you use multiple terminal or screen
+    sudo yum install yakuake
+
+    # Autostart Yakuake
+    sudo cp /usr/share/applications/kde4/yakuake.desktop /etc/xdg/autostart/
+
+    # Source Code Management
+    sudo yum install git hg svn
+
+    # Best Text Editor
+    sudo yum install vim
+
+    # Python Package manager
+    sudo yum install python-pip
+
+    # Python VirtualEnv
+    sudo pip-python install virtualenvwrapper
+    mkdir ~/.virtualenvs
+</code></pre>
+
+<p>Copy this into <code>~/.bashrc</code> file</p>
+<pre><code class="bash">    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/Workspace
+    source /usr/local/bin/virtualenvwrapper.sh
+</code></pre>
+
+<p><a href="http://www.if-not-true-then-false.com/2010/linux-install-eclipse-on-fedora-centos-red-hat-rhel/">Install Eclipse</a></p>
+<pre><code class="bash">    mkdir ~/.ssh
+    cp aws-server.pem ~/.ssh
+</code></pre>
+
+<p>Create script to ssh production &amp; staging server on your home directory</p>
+<pre><code class="bash">    ssh -t -i ~/.ssh/aws-server.pem ec2-user@ip-address screen -R YourName
+</code></pre>
+
+<pre><code class="bash">    # Create and Copy the Key into Github Key Management 
+    ssh-keygen
+    cat ~/.ssh/id_rsa.pub
+</code></pre>
+
+<p>Clone project</p>
+<pre><code class="bash">    git clone git@github.com:Account/project.git
+</code></pre>
+
+<p>Setup GitConfig File
+<a href="../git-alias/">Alias</a></p>
+<pre><code>    [user]
+        name = YourName
+        email = email@email.com
+</code></pre>
+
+<p>Make Virtual Environment</p>
+<pre><code class="bash">    mkvirtualenv project --distribute
+    workon project
+</code></pre>
+
+<p>Setup Project</p>
+<pre><code class="bash">    # Setup Necessary Python Library
+    sudo yum install python python-devel
+
+    # Setup MySQL if necessary
+    sudo yum install mysql mysql-server mysql-devel
+
+    # If you need PIL library
+    sudo yum install python-imaging
+
+    # Install Requirement
+    pip install -r requirements.txt
+</code></pre>
+
+<p><a href="http://nodejs.tchol.org/">Install NodeJS</a></p>
+<p>This is to allow Sudo user to run execute node.</p>
+<pre><code class="bash">    sudo ln -s /usr/local/bin/node /usr/bin/node
+    sudo ln -s /usr/local/lib/node /usr/lib/node
+    sudo ln -s /usr/local/bin/npm /usr/bin/npm
+    sudo ln -s /usr/local/bin/node-waf /usr/bin/node-waf
+</code></pre>
+
+<p>Setup Memcached</p>
+<pre><code class="bash">    yum install memcached libmemcached libmemcached-devel
+    pip install pylibmc python-memcached
+</code></pre>
+
+<p>Setup PostgreSQL with PostGIS</p>
+<pre><code class="bash">    yum install postgresql-server
+    yum install postgresql
+    yum install postgis
+
+    postgresql-setup initdb
+    service postgresql start
+    chkconfig postgresql on
+
+    sudo -u postgres psql
+    &gt; create user eugene createdb createuser password 'password';
+
+    createdb eugene
+
+    # For POSTGIS
+    psql
+    &gt; CREATE EXTENSION postgis;
+    &gt; CREATE EXTENSION postgis_topology;
+</code></pre>
+
+<p>PostGIS setup troubleshoot: </p>
+<ul>
+<li><a href="http://wiki.postgresql.org/wiki/YUM_Installation">PostGIS Yum Installation</a></li>
+<li><a href="http://www.postgresql.org/message-id/4D958A35.8030501@hogranch.com">PostGIS User Permission</a></li>
+<li><a href="https://docs.djangoproject.com/en/dev/ref/contrib/gis/install/#troubleshooting">PostGIS Django Troubleshoot</a></li>
+</ul>
+<p>Extras:</p>
+<pre><code class="bash">    sudo rpm -Uvh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm
+</code></pre>
+
+<p>I hope I didn't miss any step. If I do I'll update this post.</p></div>
             
         </div>
 
@@ -214,12 +329,12 @@
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
-        <script src="./js/jquery-1.10.2.min.js"></script>
-        <script src="./js/bootstrap-3.0.3.min.js"></script>
-        <script src="./js/highlight.pack.js"></script>
-        <script>var base_url = '.';</script>
-        <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
-        <script src="./js/base.js"></script>
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
             <div class="modal-dialog">
@@ -248,8 +363,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 0.15.3
-Build Date UTC : 2016-09-05 21:11:29.193333
--->

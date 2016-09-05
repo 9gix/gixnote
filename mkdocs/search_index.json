@@ -1,0 +1,174 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Eugene's Note!\n\n\nGreetings!!\n\n\nHappy Exploring!!! :)", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#eugenes-note", 
+            "text": "Greetings!!  Happy Exploring!!! :)", 
+            "title": "Eugene's Note!"
+        }, 
+        {
+            "location": "/bookmarks/", 
+            "text": "Bookmarks\n\n\nComing soon", 
+            "title": "Bookmarks"
+        }, 
+        {
+            "location": "/bookmarks/#bookmarks", 
+            "text": "Coming soon", 
+            "title": "Bookmarks"
+        }, 
+        {
+            "location": "/devenv/fedora/", 
+            "text": "Setup Fedora as Development Environment\n\n\n    # Kernel headers, compiler, etc\n    yum install kernel-headers kernel-devel gcc\n\n    # Yakuake is very useful if you use multiple terminal or screen\n    sudo yum install yakuake\n\n    # Autostart Yakuake\n    sudo cp /usr/share/applications/kde4/yakuake.desktop /etc/xdg/autostart/\n\n    # Source Code Management\n    sudo yum install git hg svn\n\n    # Best Text Editor\n    sudo yum install vim\n\n    # Python Package manager\n    sudo yum install python-pip\n\n    # Python VirtualEnv\n    sudo pip-python install virtualenvwrapper\n    mkdir ~/.virtualenvs\n\n\n\n\nCopy this into \n~/.bashrc\n file\n\n\n    export WORKON_HOME=$HOME/.virtualenvs\n    export PROJECT_HOME=$HOME/Workspace\n    source /usr/local/bin/virtualenvwrapper.sh\n\n\n\n\nInstall Eclipse\n\n\n    mkdir ~/.ssh\n    cp aws-server.pem ~/.ssh\n\n\n\n\nCreate script to ssh production \n staging server on your home directory\n\n\n    ssh -t -i ~/.ssh/aws-server.pem ec2-user@ip-address screen -R YourName\n\n\n\n\n    # Create and Copy the Key into Github Key Management \n    ssh-keygen\n    cat ~/.ssh/id_rsa.pub\n\n\n\n\nClone project\n\n\n    git clone git@github.com:Account/project.git\n\n\n\n\nSetup GitConfig File\n\nAlias\n\n\n    [user]\n        name = YourName\n        email = email@email.com\n\n\n\n\nMake Virtual Environment\n\n\n    mkvirtualenv project --distribute\n    workon project\n\n\n\n\nSetup Project\n\n\n    # Setup Necessary Python Library\n    sudo yum install python python-devel\n\n    # Setup MySQL if necessary\n    sudo yum install mysql mysql-server mysql-devel\n\n    # If you need PIL library\n    sudo yum install python-imaging\n\n    # Install Requirement\n    pip install -r requirements.txt\n\n\n\n\nInstall NodeJS\n\n\nThis is to allow Sudo user to run execute node.\n\n\n    sudo ln -s /usr/local/bin/node /usr/bin/node\n    sudo ln -s /usr/local/lib/node /usr/lib/node\n    sudo ln -s /usr/local/bin/npm /usr/bin/npm\n    sudo ln -s /usr/local/bin/node-waf /usr/bin/node-waf\n\n\n\n\nSetup Memcached\n\n\n    yum install memcached libmemcached libmemcached-devel\n    pip install pylibmc python-memcached\n\n\n\n\nSetup PostgreSQL with PostGIS\n\n\n    yum install postgresql-server\n    yum install postgresql\n    yum install postgis\n\n    postgresql-setup initdb\n    service postgresql start\n    chkconfig postgresql on\n\n    sudo -u postgres psql\n    \n create user eugene createdb createuser password 'password';\n\n    createdb eugene\n\n    # For POSTGIS\n    psql\n    \n CREATE EXTENSION postgis;\n    \n CREATE EXTENSION postgis_topology;\n\n\n\n\nPostGIS setup troubleshoot: \n\n\n\n\nPostGIS Yum Installation\n\n\nPostGIS User Permission\n\n\nPostGIS Django Troubleshoot\n\n\n\n\nExtras:\n\n\n    sudo rpm -Uvh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm\n\n\n\n\nI hope I didn't miss any step. If I do I'll update this post.", 
+            "title": "Fedora"
+        }, 
+        {
+            "location": "/devenv/fedora/#setup-fedora-as-development-environment", 
+            "text": "# Kernel headers, compiler, etc\n    yum install kernel-headers kernel-devel gcc\n\n    # Yakuake is very useful if you use multiple terminal or screen\n    sudo yum install yakuake\n\n    # Autostart Yakuake\n    sudo cp /usr/share/applications/kde4/yakuake.desktop /etc/xdg/autostart/\n\n    # Source Code Management\n    sudo yum install git hg svn\n\n    # Best Text Editor\n    sudo yum install vim\n\n    # Python Package manager\n    sudo yum install python-pip\n\n    # Python VirtualEnv\n    sudo pip-python install virtualenvwrapper\n    mkdir ~/.virtualenvs  Copy this into  ~/.bashrc  file      export WORKON_HOME=$HOME/.virtualenvs\n    export PROJECT_HOME=$HOME/Workspace\n    source /usr/local/bin/virtualenvwrapper.sh  Install Eclipse      mkdir ~/.ssh\n    cp aws-server.pem ~/.ssh  Create script to ssh production   staging server on your home directory      ssh -t -i ~/.ssh/aws-server.pem ec2-user@ip-address screen -R YourName      # Create and Copy the Key into Github Key Management \n    ssh-keygen\n    cat ~/.ssh/id_rsa.pub  Clone project      git clone git@github.com:Account/project.git  Setup GitConfig File Alias      [user]\n        name = YourName\n        email = email@email.com  Make Virtual Environment      mkvirtualenv project --distribute\n    workon project  Setup Project      # Setup Necessary Python Library\n    sudo yum install python python-devel\n\n    # Setup MySQL if necessary\n    sudo yum install mysql mysql-server mysql-devel\n\n    # If you need PIL library\n    sudo yum install python-imaging\n\n    # Install Requirement\n    pip install -r requirements.txt  Install NodeJS  This is to allow Sudo user to run execute node.      sudo ln -s /usr/local/bin/node /usr/bin/node\n    sudo ln -s /usr/local/lib/node /usr/lib/node\n    sudo ln -s /usr/local/bin/npm /usr/bin/npm\n    sudo ln -s /usr/local/bin/node-waf /usr/bin/node-waf  Setup Memcached      yum install memcached libmemcached libmemcached-devel\n    pip install pylibmc python-memcached  Setup PostgreSQL with PostGIS      yum install postgresql-server\n    yum install postgresql\n    yum install postgis\n\n    postgresql-setup initdb\n    service postgresql start\n    chkconfig postgresql on\n\n    sudo -u postgres psql\n      create user eugene createdb createuser password 'password';\n\n    createdb eugene\n\n    # For POSTGIS\n    psql\n      CREATE EXTENSION postgis;\n      CREATE EXTENSION postgis_topology;  PostGIS setup troubleshoot:    PostGIS Yum Installation  PostGIS User Permission  PostGIS Django Troubleshoot   Extras:      sudo rpm -Uvh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm  I hope I didn't miss any step. If I do I'll update this post.", 
+            "title": "Setup Fedora as Development Environment"
+        }, 
+        {
+            "location": "/devenv/git-alias/", 
+            "text": "Git Aliases\n\n\nRefer to \nmy gitconfig", 
+            "title": "Git alias"
+        }, 
+        {
+            "location": "/devenv/git-alias/#git-aliases", 
+            "text": "Refer to  my gitconfig", 
+            "title": "Git Aliases"
+        }, 
+        {
+            "location": "/devenv/python3-opencv3/", 
+            "text": "Setup OpenCV for Python 3 in Windows\n\n\n\n\nInstall \nPython 3\n (default Python is x86)\n\n\nInstall \nVisual C++ 2015 Redistributable package\n  (use the x86 for default python)\n\n\n\n\nInstall \nOpenCV Windows Binary\n (use win32 for default python)\n\n\npip install opencv_python-3.1.0-cp35m-win32.whl\n\n\n\n\n\n\n\nVerify:\n\n\nimport cv2\nprint(cv2.__version__)\n\n\n\n\n\n\n\nRead Docs:\n\n\n\n\nFor \nOpenCV 2.4 Docs\n\n\nFor \nOpenCV 3.1 Docs\n\n\n\n\n\n\n\n\n\n\nQ: Why Python 3.x which binds OpenCV 3.x but still import cv2? \n\n\nA: cv2 is a prefix for C++ API, whereas cv is a prefix for C API", 
+            "title": "Python3 opencv3"
+        }, 
+        {
+            "location": "/devenv/python3-opencv3/#setup-opencv-for-python-3-in-windows", 
+            "text": "Install  Python 3  (default Python is x86)  Install  Visual C++ 2015 Redistributable package   (use the x86 for default python)   Install  OpenCV Windows Binary  (use win32 for default python)  pip install opencv_python-3.1.0-cp35m-win32.whl    Verify:  import cv2\nprint(cv2.__version__)    Read Docs:   For  OpenCV 2.4 Docs  For  OpenCV 3.1 Docs      Q: Why Python 3.x which binds OpenCV 3.x but still import cv2?   A: cv2 is a prefix for C++ API, whereas cv is a prefix for C API", 
+            "title": "Setup OpenCV for Python 3 in Windows"
+        }, 
+        {
+            "location": "/devenv/ssh-via-https/", 
+            "text": "SSH via HTTPS\n\n\n   # File: ~/.ssh/config\n\n   Host github.com\n       Hostname ssh.github.com\n       Port 443\n\n\n\n\nMore info: \nman ssh_config", 
+            "title": "Ssh via https"
+        }, 
+        {
+            "location": "/devenv/ssh-via-https/#ssh-via-https", 
+            "text": "# File: ~/.ssh/config\n\n   Host github.com\n       Hostname ssh.github.com\n       Port 443  More info:  man ssh_config", 
+            "title": "SSH via HTTPS"
+        }, 
+        {
+            "location": "/devenv/toolset/", 
+            "text": "Useful Tools for My Web Development\n\n\nThese are some setup necessary for my development environment.\n\n\nProgramming Languages\n\n\n\n\nRuby using RVM\n\n\nNode using NVM\n\n\nPython using VirtualenvWrapper\n\n\n\n\nDatabase\n\n\n\n\nPostgres\n\n\nMySQL\n\n\nSQLite\n\n\nRedis\n\n\n\n\nVersion Control\n\n\n\n\nGit\n\n\nMercurial\n\n\nSubversion\n\n\n\n\nDeb: \napt-get install git mercurial subversion\n\n\nTerminal\n\n\n\n\nTMUX\n\n\nScreen\n\n\n\n\nDeb: \napt-get install tmux screen\n\n\nEditor\n\n\n\n\nVim\n\n\nSublime\n\n\n\n\nDeb: \napt-get install vim\n\n\nBrowser\n\n\n\n\nChrome\n\n\nFirefox", 
+            "title": "Toolset"
+        }, 
+        {
+            "location": "/devenv/toolset/#useful-tools-for-my-web-development", 
+            "text": "These are some setup necessary for my development environment.", 
+            "title": "Useful Tools for My Web Development"
+        }, 
+        {
+            "location": "/devenv/toolset/#programming-languages", 
+            "text": "Ruby using RVM  Node using NVM  Python using VirtualenvWrapper", 
+            "title": "Programming Languages"
+        }, 
+        {
+            "location": "/devenv/toolset/#database", 
+            "text": "Postgres  MySQL  SQLite  Redis", 
+            "title": "Database"
+        }, 
+        {
+            "location": "/devenv/toolset/#version-control", 
+            "text": "Git  Mercurial  Subversion   Deb:  apt-get install git mercurial subversion", 
+            "title": "Version Control"
+        }, 
+        {
+            "location": "/devenv/toolset/#terminal", 
+            "text": "TMUX  Screen   Deb:  apt-get install tmux screen", 
+            "title": "Terminal"
+        }, 
+        {
+            "location": "/devenv/toolset/#editor", 
+            "text": "Vim  Sublime   Deb:  apt-get install vim", 
+            "title": "Editor"
+        }, 
+        {
+            "location": "/devenv/toolset/#browser", 
+            "text": "Chrome  Firefox", 
+            "title": "Browser"
+        }, 
+        {
+            "location": "/devenv/ubuntu/", 
+            "text": "My Ubuntu Development Environment\n\n\nThe following is a personal notes for Setting up ubuntu for my dev machine.\n\n\nTerminal Shortcut:\n\n\n\n\nCTRL+SHIFT+UP/DOWN\n\n\nSHIFT+PAGE UP/DOWN\n\n\n\n\nTerminology:\n\n\n\n\n#\n Comment\n\n\n=#\n Postgres console\n\n\n Replace the specified file with the following lines\n\n\n Append to the specified file with the following lines\n\n\n\n\nNote: \n\n\n\n\nExecute with \nsudo\n command when needed\n\n\nfedora\n\n\ndev-tool\n\n\n\n\n    # Update apt repository\n    apt update\n    apt upgrade\n    apt dist-upgrade\n\n    # text editor\n    apt install vim\n\n    # Vim Pathogen installation\n    mkdir -p ~/.vim/autoload ~/.vim/bundle; \\\n    curl -LSso ~/.vim/autoload/pathogen.vim \\\n        https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim\n\n    # \n ~/.bashrc\n    execute pathogen#infect()\n    syntax on\n    filetype plugin indent on\n\n    # Start Installing Vim Plugin inside the ~/.vim/bundle like this\n    cd ~/.vim/bundle\n    git clone git://github.com/tpope/vim-sensible.git\n\n    # Ref: see my vimrc file below\n\n    # terminal workspace\n    apt install yakuake\n\n    # utilities\n    apt install curl\n\n    # revision control\n    apt install git mercurial subversion\n\n    apt install python-pip\n    pip install virtualenvwrapper\n\n    # Python VirtualEnvironment\n    # http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html\n    # \n ~/.bashrc\n    export WORKON_HOME=$HOME/.virtualenvs\n    export PROJECT_HOME=$HOME/Workspace\n    export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh\n    source /usr/local/bin/virtualenvwrapper_lazy.sh\n\n    # SSH \n Git see:\n    # http://blog.eugene-yeo.in/setup-fedora-as-development-environment.html\n\n    # NodeJS\n    apt install nodejs nodejs-legacy\n    curl https://www.npmjs.org/install.sh | sh\n    npm config set prefix ~/.npm\n\n    # \n ~/.bashrc\n    export PATH=$HOME/.npm/bin:$PATH\n\n    # Ruby Version Manager\n    curl -L https://get.rvm.io | bash -s stable\n    export PATH=\n$PATH:$HOME/.rvm/bin\n # Add RVM to PATH for scripting\n    source $HOME/.rvm/scripts/rvm\n    rvm autolibs packages\n    rvm install ruby\n    rvm use --default ruby\n    gem install rails\n\n    # https://help.ubuntu.com/community/PostgreSQL#Basic_Server_Setup\n    sudo apt install postgresql postgresql-client postgresql-contrib pgadmin3\n\n    # set root password\n    sudo -u postgres psql postgres\n    =# \\password postgres\n    sudo -u postgres createdb mydb\n\n    # alternative: set user as superuser\n    sudo -u postgres createuser --superuser $USER\n    sudo -u $USER createdb $USER\n    sudo -u $USER psql\n    =# \\password \nyour-user-name\n\n\n    # Setup Java OpenJDK\n    apt install openjdk-7-jdk\n\n    # Setup Java Oracle JDK\n    # https://www.digitalocean.com/community/articles/how-to-install-java-on-ubuntu-with-apt-get\n    add-apt-repository ppa:webupd8team/java\n    apt update\n    apt install oracle-java8-installer\n\n    # Java Environment\n    # \n ~/.bashrc\n    export PATH=$PATH:/usr/lib/jvm/java-\nVERSION\n-\nVENDOR\n/bin\n    export JAVA_HOME=/usr/lib/jvm/java-\nVERSION\n-\nVENDOR\n\n\n    # ElasticSearch Setup Guide\n    # http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html\n    # http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-service.html\n\n    # Bash Alias File: ~/.bash_aliases", 
+            "title": "Ubuntu"
+        }, 
+        {
+            "location": "/devenv/ubuntu/#my-ubuntu-development-environment", 
+            "text": "The following is a personal notes for Setting up ubuntu for my dev machine.  Terminal Shortcut:   CTRL+SHIFT+UP/DOWN  SHIFT+PAGE UP/DOWN   Terminology:   #  Comment  =#  Postgres console   Replace the specified file with the following lines   Append to the specified file with the following lines   Note:    Execute with  sudo  command when needed  fedora  dev-tool       # Update apt repository\n    apt update\n    apt upgrade\n    apt dist-upgrade\n\n    # text editor\n    apt install vim\n\n    # Vim Pathogen installation\n    mkdir -p ~/.vim/autoload ~/.vim/bundle; \\\n    curl -LSso ~/.vim/autoload/pathogen.vim \\\n        https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim\n\n    #   ~/.bashrc\n    execute pathogen#infect()\n    syntax on\n    filetype plugin indent on\n\n    # Start Installing Vim Plugin inside the ~/.vim/bundle like this\n    cd ~/.vim/bundle\n    git clone git://github.com/tpope/vim-sensible.git\n\n    # Ref: see my vimrc file below\n\n    # terminal workspace\n    apt install yakuake\n\n    # utilities\n    apt install curl\n\n    # revision control\n    apt install git mercurial subversion\n\n    apt install python-pip\n    pip install virtualenvwrapper\n\n    # Python VirtualEnvironment\n    # http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html\n    #   ~/.bashrc\n    export WORKON_HOME=$HOME/.virtualenvs\n    export PROJECT_HOME=$HOME/Workspace\n    export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh\n    source /usr/local/bin/virtualenvwrapper_lazy.sh\n\n    # SSH   Git see:\n    # http://blog.eugene-yeo.in/setup-fedora-as-development-environment.html\n\n    # NodeJS\n    apt install nodejs nodejs-legacy\n    curl https://www.npmjs.org/install.sh | sh\n    npm config set prefix ~/.npm\n\n    #   ~/.bashrc\n    export PATH=$HOME/.npm/bin:$PATH\n\n    # Ruby Version Manager\n    curl -L https://get.rvm.io | bash -s stable\n    export PATH= $PATH:$HOME/.rvm/bin  # Add RVM to PATH for scripting\n    source $HOME/.rvm/scripts/rvm\n    rvm autolibs packages\n    rvm install ruby\n    rvm use --default ruby\n    gem install rails\n\n    # https://help.ubuntu.com/community/PostgreSQL#Basic_Server_Setup\n    sudo apt install postgresql postgresql-client postgresql-contrib pgadmin3\n\n    # set root password\n    sudo -u postgres psql postgres\n    =# \\password postgres\n    sudo -u postgres createdb mydb\n\n    # alternative: set user as superuser\n    sudo -u postgres createuser --superuser $USER\n    sudo -u $USER createdb $USER\n    sudo -u $USER psql\n    =# \\password  your-user-name \n\n    # Setup Java OpenJDK\n    apt install openjdk-7-jdk\n\n    # Setup Java Oracle JDK\n    # https://www.digitalocean.com/community/articles/how-to-install-java-on-ubuntu-with-apt-get\n    add-apt-repository ppa:webupd8team/java\n    apt update\n    apt install oracle-java8-installer\n\n    # Java Environment\n    #   ~/.bashrc\n    export PATH=$PATH:/usr/lib/jvm/java- VERSION - VENDOR /bin\n    export JAVA_HOME=/usr/lib/jvm/java- VERSION - VENDOR \n\n    # ElasticSearch Setup Guide\n    # http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html\n    # http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-service.html\n\n    # Bash Alias File: ~/.bash_aliases", 
+            "title": "My Ubuntu Development Environment"
+        }, 
+        {
+            "location": "/devenv/windows/", 
+            "text": "Windows Development Environment\n\n\n\n\nInstall VMWare Workstation\n\n\nSetup Debian as Guest OS in VMWare\n   Note: when prompted \nDebian Software Selection\n, untick \"Desktop Environment\".\n\n\n\n\nDebian: set static IP address. For example: \n\n\niface eth0 inet static\n    address 192.168.123.123\n    gateway 192.168.123.2\n\n\n\n\n\n\n\nDebian: install \ndev-tool\n especially vim, tmux, python.\n\n\n\n\n\n\nWindows: Install \nConEmu\n\n\n\n\n\n\nWindows: Install \nMinGW MSYS\n or \nGit Bash\n (prefered)\n\n\n\n\n\n\nWindows: Generate SSH key pair (public, private)\n\n\nssh-keygen -t rsa\n\n\n\n\n\n\n\nDebian: Add Windows public SSH key into Debian Authorized SSH Key\n    \n# File: ~/.ssh/authorized_keys\n\n\n\n\n\n\nWindows: Setup ConEmu to use MinGW MSYS bash shell\n\n\n\n\n\n\nWindows - Bash Shell: Setup Alias to ssh to Debian\n\n\n# ~/.bashrc or ~/.bash_aliases\nalias devm=\"ssh \nuser\n@\nip-address\n -t tmux a\n\n\n\n\n\n\n\nWindows: close VMWare Workstation window.\n   When asked, choose run in background instead.\n\n\n\n\n\n\nWindows: run ConEmu and use alias \ndevm\n to connect to dev environment", 
+            "title": "Windows"
+        }, 
+        {
+            "location": "/devenv/windows/#windows-development-environment", 
+            "text": "Install VMWare Workstation  Setup Debian as Guest OS in VMWare\n   Note: when prompted  Debian Software Selection , untick \"Desktop Environment\".   Debian: set static IP address. For example:   iface eth0 inet static\n    address 192.168.123.123\n    gateway 192.168.123.2    Debian: install  dev-tool  especially vim, tmux, python.    Windows: Install  ConEmu    Windows: Install  MinGW MSYS  or  Git Bash  (prefered)    Windows: Generate SSH key pair (public, private)  ssh-keygen -t rsa    Debian: Add Windows public SSH key into Debian Authorized SSH Key\n     # File: ~/.ssh/authorized_keys    Windows: Setup ConEmu to use MinGW MSYS bash shell    Windows - Bash Shell: Setup Alias to ssh to Debian  # ~/.bashrc or ~/.bash_aliases\nalias devm=\"ssh  user @ ip-address  -t tmux a    Windows: close VMWare Workstation window.\n   When asked, choose run in background instead.    Windows: run ConEmu and use alias  devm  to connect to dev environment", 
+            "title": "Windows Development Environment"
+        }, 
+        {
+            "location": "/others/setup-magento-ext/", 
+            "text": "Setup Magento Extension\n\n\n\n\n\n\nDisable all cache at \nAdmin Panel \n System \n Cache Management\n\n\n\n\n\n\nEnable Error Printing, go to \nProjectDir\n/errors\n.\n   Copy \nlocal.xml.sample\n to \nlocal.xml\n\n\n\n\n\n\nDecide \nModuleNamespace\n and \nModuleName\n\n\n\n\n\n\nLet \nModuleDirectory\n be\n   \nProjectDirectory\n/app/code/community/\nModuleNamespace\n/\nModuleName\n/\n.\n\n\n\n\n\n\nCreate \nModule Configuration file\n at  \nModuleDirectory\n/etc/config.xml\n\n\n!-- File: app/code/community/MyCompany/MyProduct/etc/config.xml --\n\n\n?xml version=\"1.0\" encoding=\"UTF-8\"?\n\n\nconfig\n\n    \nmodules\n\n        \nMyCompany_MyProduct\n\n            \nversion\n0.0.0\n/version\n\n        \n/MyCompany_MyProduct\n\n    \n/modules\n\n    \nglobal\n\n        \n!-- \n        PHP Code declaration\n        --------------------\n        Define the Model Class and ModelResource definition\n        Define the Helper Class\n        Define the Block Class\n        Define the Resources Setup\n        Define the Event Listener or Signal\n        --\n\n    \n/global\n\n\n    \n!-- define More Module Configuration here --\n\n\n\n/config\n\n\n\n\n\n\n\n\nActivate Module using Initial configuration file.\n   \nProjectDirectory\n/app/etc/modules/\nModuleNamespace_ModuleName\n.xml\n\n\n!-- File: app/etc/modules/MyCompany_MyProduct.xml --\n\n\n?xml version=\"1.0\" encoding=\"UTF-8\"?\n\n\nconfig\n\n    \nmodules\n\n        \nMyCompany_MyProduct\n\n            \nactive\ntrue\n/active\n\n            \ncodePool\ncommunity\n/codePool\n\n        \n/MyCompany_MyProduct\n\n    \n/modules\n\n\n/config\n\n\n\n\n\n\n\n\nVerify The module is added at \nSystem \n Configuration \n Advanced \n Advanced\n\n\n\n\n\n\nPlan/Design the Extension structure.\n\n\n\n\n\n\nStart writing the code, and always include them \n   inside the module configuration file.\n\n\n\n\n\n\nLearn \nmodman\n for packaging the extension", 
+            "title": "Setup magento ext"
+        }, 
+        {
+            "location": "/others/setup-magento-ext/#setup-magento-extension", 
+            "text": "Disable all cache at  Admin Panel   System   Cache Management    Enable Error Printing, go to  ProjectDir /errors .\n   Copy  local.xml.sample  to  local.xml    Decide  ModuleNamespace  and  ModuleName    Let  ModuleDirectory  be\n    ProjectDirectory /app/code/community/ ModuleNamespace / ModuleName / .    Create  Module Configuration file  at   ModuleDirectory /etc/config.xml  !-- File: app/code/community/MyCompany/MyProduct/etc/config.xml --  ?xml version=\"1.0\" encoding=\"UTF-8\"?  config \n     modules \n         MyCompany_MyProduct \n             version 0.0.0 /version \n         /MyCompany_MyProduct \n     /modules \n     global \n         !-- \n        PHP Code declaration\n        --------------------\n        Define the Model Class and ModelResource definition\n        Define the Helper Class\n        Define the Block Class\n        Define the Resources Setup\n        Define the Event Listener or Signal\n        -- \n     /global \n\n     !-- define More Module Configuration here --  /config     Activate Module using Initial configuration file.\n    ProjectDirectory /app/etc/modules/ ModuleNamespace_ModuleName .xml  !-- File: app/etc/modules/MyCompany_MyProduct.xml --  ?xml version=\"1.0\" encoding=\"UTF-8\"?  config \n     modules \n         MyCompany_MyProduct \n             active true /active \n             codePool community /codePool \n         /MyCompany_MyProduct \n     /modules  /config     Verify The module is added at  System   Configuration   Advanced   Advanced    Plan/Design the Extension structure.    Start writing the code, and always include them \n   inside the module configuration file.    Learn  modman  for packaging the extension", 
+            "title": "Setup Magento Extension"
+        }, 
+        {
+            "location": "/others/setup-magento/", 
+            "text": "Setup Magento\n\n\n\n\nDownload Magento\n Stable Release and Sample File.\n\n\nPlease Refer to \nJosh Barnett Setup Guide", 
+            "title": "Setup magento"
+        }, 
+        {
+            "location": "/others/setup-magento/#setup-magento", 
+            "text": "Download Magento  Stable Release and Sample File.  Please Refer to  Josh Barnett Setup Guide", 
+            "title": "Setup Magento"
+        }, 
+        {
+            "location": "/py/singleton/", 
+            "text": "Singleton Python\n\n\n# Borg Pattern\nclass Earth:\n    __dict = {}\n    def __init__(self):\n        self.__dict__ = self.__dict\n\ne1 = Earth()\ne2 = Earth()\ne1.population = 30000000\nprint e2.population\n\n\n# or with Singleton decorator (https://www.python.org/dev/peps/pep-0318/)\n\ndef singleton(cls):\n    instances = {}\n    def getinstance():\n        if cls not in instances:\n            instances[cls] = cls()\n        return instances[cls]\n    return getinstance\n\n@singleton\nclass Earth:\n    pass\n\ne1 = Earth()\ne2 = Earth()\ne1.population = 30000000\nprint e2.population", 
+            "title": "Singleton"
+        }, 
+        {
+            "location": "/py/singleton/#singleton-python", 
+            "text": "# Borg Pattern\nclass Earth:\n    __dict = {}\n    def __init__(self):\n        self.__dict__ = self.__dict\n\ne1 = Earth()\ne2 = Earth()\ne1.population = 30000000\nprint e2.population\n\n\n# or with Singleton decorator (https://www.python.org/dev/peps/pep-0318/)\n\ndef singleton(cls):\n    instances = {}\n    def getinstance():\n        if cls not in instances:\n            instances[cls] = cls()\n        return instances[cls]\n    return getinstance\n\n@singleton\nclass Earth:\n    pass\n\ne1 = Earth()\ne2 = Earth()\ne1.population = 30000000\nprint e2.population", 
+            "title": "Singleton Python"
+        }, 
+        {
+            "location": "/py/textsplitter/", 
+            "text": "Long Text Splitter (Lazy Split)\n\n\ndef splitter(text, amount):\n    for i in range(0,len(text),amount):\n        yield(text[i:i+amount])\n\nmessage = \"\"\"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nNulla orci neque, Aliquam laoreet blandit nulla,\nnec fermentum orci euismod vitae.\nVestibulum non nisi at leo rutrum imperdiet. \"\"\"\nx = splitter(message,50)\nprint x.next() # 1 - 50\nprint x.next() # 51 - 100", 
+            "title": "Textsplitter"
+        }, 
+        {
+            "location": "/py/textsplitter/#long-text-splitter-lazy-split", 
+            "text": "def splitter(text, amount):\n    for i in range(0,len(text),amount):\n        yield(text[i:i+amount])\n\nmessage = \"\"\"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nNulla orci neque, Aliquam laoreet blandit nulla,\nnec fermentum orci euismod vitae.\nVestibulum non nisi at leo rutrum imperdiet. \"\"\"\nx = splitter(message,50)\nprint x.next() # 1 - 50\nprint x.next() # 51 - 100", 
+            "title": "Long Text Splitter (Lazy Split)"
+        }, 
+        {
+            "location": "/py/timeconvert/", 
+            "text": "Time Conversion\n\n\n\"24hr\" -\n \"12hr\" format \n\n\nimport time\n\nt24 = \"23:30\"\nt12 = time.strftime(\"%I:%M %p\", time.strptime(t24, \"%H:%M\"))\nassert t12 == \"11:30 pm\"", 
+            "title": "Timeconvert"
+        }, 
+        {
+            "location": "/py/timeconvert/#time-conversion", 
+            "text": "\"24hr\" -  \"12hr\" format   import time\n\nt24 = \"23:30\"\nt12 = time.strftime(\"%I:%M %p\", time.strptime(t24, \"%H:%M\"))\nassert t12 == \"11:30 pm\"", 
+            "title": "Time Conversion"
+        }
+    ]
+}
