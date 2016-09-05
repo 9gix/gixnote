@@ -10,8 +10,16 @@ Setup OpenCV for Python 3
 Done:
 
 >>> import cv2
+>>> print(cv2.__version__)
     
+* For `OpenCV 3.1 Docs`_
+* For `OpenCV 2.4 Docs`_
+
+    FYI: Why python 3.x binds opencv 3.x but import cv2? 
+    ANS: cv2 is a prefix for C++ API, whereas cv is a prefix for C API
 
 .. _Python 3: https://www.python.org/downloads/
 .. _Visual C++ 2015 Redistributable package: https://www.microsoft.com/en-sg/download/confirmation.aspx?id=48145
 .. _OpenCV: http://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv
+.. _OpenCV 2.4 Docs: http://docs.opencv.org/2.4/
+.. _OpenCV 3.1 Docs: http://docs.opencv.org/3.1.0/index.html
