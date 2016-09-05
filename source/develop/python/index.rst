@@ -7,3 +7,4 @@ Python Development
    time-conversion
    split-long-text
    singleton
+   opencv_python3

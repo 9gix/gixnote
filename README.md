@@ -20,6 +20,7 @@ Personal Note
     mkdir ../gixnote-build
     cd ../gixnote-build
     git clone git@github.com:9gix/gixnote.git html
+    cd html
     git symbolic-ref HEAD refs/heads/gh-pages
     rm .git/index
     git clean -fdx
